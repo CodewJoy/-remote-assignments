@@ -1,2 +1,2 @@
-# -remote-assignments
+# remote-assignments
 AppWorks_School_HW
