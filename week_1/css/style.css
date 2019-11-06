@@ -1,0 +1,123 @@
+/* PC */
+/* .wrapper {
+    margin: 0 auto;
+} */
+header {
+    padding: 1px;
+    background: black;
+}
+
+.nav {
+    margin:0 auto;
+    max-width: 1300px;
+}
+
+.logo {
+    float: left;
+    margin-left: 20px;
+}
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.hamburger {
+    display: none;
+}
+
+.menu {
+    float: right;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu li {
+    margin-right: 40px;
+    display: inline-block;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+section {
+    text-align: center; 
+}
+
+.welcome {
+    padding: 30px;
+    background: whitesmoke;
+}
+
+.welcomeFont {
+    display: inline-block;
+    max-width: 600px;
+}
+
+div.gallery {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+.responsiveBox {
+    padding: 0% 1% 1% 1%;
+    width: 48%;
+}
+
+.responsiveBox img {
+    width: 100%;
+    height: auto;
+}
+
+.button {
+    margin: 8px;
+    background-color: #6B8E23; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+}
+
+/* hamburger */
+@media (max-width: 800px) {
+    .nav {
+        margin:0 auto;
+        max-width: 800px;
+    }
+    /* menu trigger icon replace menu items */
+    .menu li {
+        display: none;
+    }
+    .hamburger {
+        float: right;
+        display: block;
+        margin: 13px 15px  0px  13px;
+
+    }
+}
+
+/* gallery 1 columm */
+@media (max-width: 500px) {
+    .flex-container {
+        display: inline-block;
+    }
+    .responsiveBox {
+        padding: 0% 5% 5% 5%;
+        width: 90%;
+    }
+}
