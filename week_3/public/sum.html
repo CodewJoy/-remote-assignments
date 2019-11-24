@@ -1,0 +1,64 @@
+<html>
+<head>
+    <style>
+        input.description {
+            width: 25%;
+            padding: 14px 20px;
+            margin: 0px 10px 0px 0px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button.description {
+            background-color: #33cccc;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Enter a number "N" and get the resulte of 1 + 2 + 3 + ... + N.</h2>
+    <div>
+        <input type="text" class="description"> </hr> 
+        <!-- click button & execute reqListener()-->
+        <button class="description" onclick='reqListener()'>Enter</button>
+    </div>
+    <h2>Your input is: <span class="inputNumber"></span></h2>
+    <h2>The result is: <span class="description"></span></h2>
+    <script>
+        let inputDescription = document.querySelector('input.description');
+        let spanInputNumber = document.querySelector('span.inputNumber');
+        let spanDescription = document.querySelector('span.description');
+
+        function reqListener() {
+            // Build a XMLHttp request object 
+            let xhttp = new XMLHttpRequest();
+            // By setting the onreadystatechange property of the object and naming it after the function to call when the request changes state
+            // invoke as an object method, this refers to xhttp
+            xhttp.onreadystatechange = function () {
+                // Process the server response here.
+                // xhttp.readyState property returns the state an XMLHttpRequest client is in.
+                // xhttp.readyState == 4 means the request finished and response is ready
+                // AJAX call is successful while we got a 200 OK response code.
+                if (this.readyState == 4 && this.status == 200) {
+                    spanInputNumber.innerHTML = inputDescription.value;
+                    // The responseText property returns the server response as a JavaScript string
+                    spanDescription.innerHTML = this.responseText;
+                    inputDescription.value = '';
+                }
+            };
+            // Send a Request To a Server, true for asynchronous
+            // Use GET method to send info to the URL
+            xhttp.open("GET", `http://localhost:3000/getData?number=${inputDescription.value}`, true);
+            xhttp.send();
+        }
+    </script>
+</body>
+</html>
