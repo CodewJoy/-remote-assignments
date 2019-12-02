@@ -17,11 +17,9 @@ class Header extends React.Component {
         this.checkWidth(this.match);
         this.match.addListener(this.checkWidth);
     }
-    
     componentWillUnmount() {
-        window.removeEventListener("resize", this.checkWidth);
-    }
-
+        this.match.removeListener(this.checkWidth);
+      }
     handelMobileMenuClick() {
         this.setState(prevState => ({showMobileMenu: !prevState.showMobileMenu
         }));

@@ -1,5 +1,4 @@
 /* PC */
-
 header {
     padding: 1px;
     background: black;
@@ -47,6 +46,7 @@ ul.mobileMenu a {
     right: 0px;
     top: 0px;
     margin: 13px 15px 0px 13px;
+    cursor: pointer;
 }
 
 img.closeItem  {
